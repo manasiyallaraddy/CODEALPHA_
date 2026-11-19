@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaAI – Smart Language Translation Platform</title>
+  <meta name="description" content="AI-Powered Language Translation Platform built with Google Gemini API, Express.js, and modern JavaScript. CodeAlpha Artificial Intelligence Internship Project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Ambient Glow -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="title-row">
+            <h1>Lingua<span class="gradient-text">AI</span></h1>
+            <span class="badge internship-badge">CodeAlpha AI Project</span>
+          </div>
+          <p class="tagline">Smart Language Translation Platform powered by Google Gemini</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- API Health Status Indicator -->
+        <div class="api-status-pill" id="apiStatusPill" title="Backend & Gemini AI Status">
+          <span class="status-dot status-loading"></span>
+          <span class="status-label" id="apiStatusLabel">Connecting...</span>
+        </div>
+
+        <!-- History Drawer Button -->
+        <button type="button" class="btn btn-secondary icon-btn" id="historyToggleBtn" aria-label="Open Translation History">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span class="btn-text">History</span>
+          <span class="counter-badge" id="historyCountBadge">0</span>
+        </button>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button type="button" class="btn btn-secondary theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Theme" title="Toggle Theme">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner for Missing API Key (Shown only if API key is not configured) -->
+  <div class="api-key-banner" id="apiKeyBanner" style="display: none;">
+    <div class="banner-content">
+      <div class="banner-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+      <div class="banner-text">
+        <strong>Setup Required:</strong> Add your <code>GEMINI_API_KEY</code> in the <code>.env</code> file to enable AI translations.
+      </div>
+      <button type="button" class="banner-action-btn" id="openSetupGuideBtn">How to Setup</button>
+    </div>
+  </div>
+
+  <!-- Main App Container -->
+  <main class="app-main">
+    <div class="main-container">
+
+      <!-- Sample Prompts Quick Bar -->
+      <div class="quick-samples-bar">
+        <span class="samples-label">Quick Samples:</span>
+        <button type="button" class="sample-chip" data-sample="Hello, welcome to our platform! We are excited to collaborate with you.">Greetings</button>
+        <button type="button" class="sample-chip" data-sample="Artificial intelligence is transforming communication across global languages.">AI & Tech</button>
+        <button type="button" class="sample-chip" data-sample="Could you please recommend the best local vegetarian restaurants nearby?">Travel</button>
+        <button type="button" class="sample-chip" data-sample="Please review the project deliverables and submit your feedback before Friday.">Business</button>
+      </div>
+
+      <!-- Translation Grid -->
+      <div class="translation-grid">
+
+        <!-- ================= SOURCE PANEL ================= -->
+        <section class="card panel-card source-panel" aria-label="Source Language Panel">
+          <!-- Panel Header / Language Selectors -->
+          <div class="panel-header">
+            <div class="lang-controls-wrapper">
+              <label for="sourceLangSelect" class="visually-hidden">Source Language</label>
+              
+              <!-- Quick Language Pills -->
+              <div class="lang-pills-bar" id="sourcePills">
+                <button type="button" class="lang-pill active" data-lang="auto">Auto Detect</button>
+                <button type="button" class="lang-pill" data-lang="en">English</button>
+                <button type="button" class="lang-pill" data-lang="es">Spanish</button>
+                <button type="button" class="lang-pill" data-lang="hi">Hindi</button>
+                <button type="button" class="lang-pill" data-lang="fr">French</button>
+              </div>
+
+              <!-- Full Dropdown Selector -->
+              <div class="custom-select-container">
+                <select id="sourceLangSelect" class="lang-select" aria-label="Select source language">
+                  <option value="auto" selected>✨ Auto Detect</option>
+                  <!-- Populated dynamically via JS -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Detected Language Pill (Shown when auto-detect identifies language) -->
+            <div class="detected-badge" id="detectedBadge" style="display: none;">
+              <span class="detected-sparkle">✨</span>
+              <span class="detected-text" id="detectedText">Detected: English</span>
+            </div>
+          </div>
+
+          <!-- Input Text Area -->
+          <div class="panel-body">
+            <textarea 
+              id="sourceText" 
+              class="translation-textarea" 
+              placeholder="Enter or paste text to translate... (e.g. Namaste, Hello, Bonjour, Hola)"
+              maxlength="5000"
+              spellcheck="true"
+              aria-label="Text to translate"
+            ></textarea>
+          </div>
+
+          <!-- Panel Footer / Toolbar -->
+          <div class="panel-footer">
+            <div class="footer-left">
+              <span class="char-counter" id="sourceCharCount">0 / 5,000</span>
+            </div>
+            <div class="footer-actions">
+              <!-- Source TTS -->
+              <button type="button" class="tool-btn" id="sourceTtsBtn" title="Listen to source text" aria-label="Listen to source text">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+              </button>
+
+              <!-- Copy Source -->
+              <button type="button" class="tool-btn" id="copySourceBtn" title="Copy source text" aria-label="Copy source text">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+
+              <!-- Clear Input -->
+              <button type="button" class="tool-btn" id="clearSourceBtn" title="Clear input text" aria-label="Clear input text">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SWAP BUTTON ================= -->
+        <div class="swap-divider">
+          <button type="button" class="swap-btn" id="swapLangBtn" title="Swap languages" aria-label="Swap source and target languages">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 3 4 4-4 4"></path>
+              <path d="M20 7H4"></path>
+              <path d="m8 21-4-4 4-4"></path>
+              <path d="M4 17h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- ================= TARGET PANEL ================= -->
+        <section class="card panel-card target-panel" aria-label="Target Language Panel">
+          <!-- Panel Header / Language Selectors -->
+          <div class="panel-header">
+            <div class="lang-controls-wrapper">
+              <label for="targetLangSelect" class="visually-hidden">Target Language</label>
+              
+              <!-- Quick Language Pills -->
+              <div class="lang-pills-bar" id="targetPills">
+                <button type="button" class="lang-pill" data-lang="en">English</button>
+                <button type="button" class="lang-pill active" data-lang="hi">Hindi</button>
+                <button type="button" class="lang-pill" data-lang="es">Spanish</button>
+                <button type="button" class="lang-pill" data-lang="fr">French</button>
+                <button type="button" class="lang-pill" data-lang="de">German</button>
+              </div>
+
+              <!-- Full Dropdown Selector -->
+              <div class="custom-select-container">
+                <select id="targetLangSelect" class="lang-select" aria-label="Select target language">
+                  <!-- Populated dynamically via JS -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Model Used Pill -->
+            <div class="model-badge" id="modelBadge" title="AI Translation Engine">
+              <span class="model-icon">⚡</span>
+              <span class="model-name" id="modelName">Gemini AI</span>
+            </div>
+          </div>
+
+          <!-- Output Display Area -->
+          <div class="panel-body output-body">
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState" style="display: none;">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Translating with Gemini AI...</p>
+              <div class="skeleton-lines">
+                <div class="skeleton-line full"></div>
+                <div class="skeleton-line long"></div>
+                <div class="skeleton-line medium"></div>
+              </div>
+            </div>
+
+            <!-- Empty Placeholder State -->
+            <div class="empty-state" id="emptyState">
+              <div class="empty-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 8 6 6"></path>
+                  <path d="m4 14 6-6 2-3"></path>
+                  <path d="M2 5h12"></path>
+                  <path d="M7 2h1"></path>
+                  <path d="m22 22-5-10-5 10"></path>
+                  <path d="M14 18h6"></path>
+                </svg>
+              </div>
+              <p class="empty-title">Translation Output</p>
+              <p class="empty-subtitle">Your AI translation will appear here. Select languages and click Translate or press Ctrl+Enter.</p>
+            </div>
+
+            <!-- Translated Text Area -->
+            <div id="targetText" class="translation-output" contenteditable="false" dir="ltr" aria-label="Translated output" style="display: none;"></div>
+          </div>
+
+          <!-- Panel Footer / Toolbar -->
+          <div class="panel-footer">
+            <div class="footer-left">
+              <span class="char-counter" id="targetCharCount">0 characters</span>
+              <span class="latency-pill" id="latencyPill" style="display: none;">0.4s</span>
+            </div>
+            <div class="footer-actions">
+              <!-- Text-To-Speech (TTS) -->
+              <button type="button" class="tool-btn" id="targetTtsBtn" title="Listen to translation" aria-label="Listen to translation" disabled>
+                <svg class="tts-idle-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <span class="audio-wave" style="display: none;">
+                  <span></span><span></span><span></span><span></span>
+                </span>
+              </button>
+
+              <!-- Copy Output -->
+              <button type="button" class="tool-btn" id="copyTargetBtn" title="Copy translated text" aria-label="Copy translated text" disabled>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+
+              <!-- Clear Target -->
+              <button type="button" class="tool-btn" id="clearTargetBtn" title="Clear output" aria-label="Clear output" disabled>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Action Bar -->
+      <div class="action-bar">
+        <button type="button" class="btn btn-primary translate-main-btn" id="translateBtn">
+          <span class="btn-spinner" id="btnSpinner" style="display: none;"></span>
+          <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 8 6 6"></path>
+            <path d="m4 14 6-6 2-3"></path>
+            <path d="M2 5h12"></path>
+            <path d="M7 2h1"></path>
+            <path d="m22 22-5-10-5 10"></path>
+            <path d="M14 18h6"></path>
+          </svg>
+          <span class="btn-label" id="translateBtnLabel">Translate Now</span>
+          <span class="kbd-shortcut" title="Keyboard shortcut: Press Ctrl + Enter to translate">Ctrl + Enter</span>
+        </button>
+
+        <button type="button" class="btn btn-secondary clear-all-btn" id="clearAllBtn" title="Clear both input and output">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          <span class="btn-text">Clear All</span>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= TRANSLATION HISTORY DRAWER ================= -->
+  <aside class="history-drawer" id="historyDrawer" aria-label="Translation History" aria-hidden="true">
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <h2>Translation History</h2>
+        </div>
+        <div class="drawer-actions">
+          <button type="button" class="btn btn-sm btn-ghost" id="clearHistoryBtn" title="Clear all translation history">Clear All</button>
+          <button type="button" class="close-drawer-btn" id="closeDrawerBtn" aria-label="Close History Drawer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="drawer-body" id="historyList">
+        <!-- History items rendered here -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= SETUP GUIDE MODAL ================= -->
+  <div class="modal" id="setupModal" aria-hidden="true" style="display: none;">
+    <div class="modal-overlay" id="setupModalOverlay"></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="modal-title-icon">🔑</span>
+          <h3>Configure Google Gemini API</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeSetupModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ol class="setup-steps">
+          <li>
+            <strong>Get a Free API Key</strong>
+            <p>Visit <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a> and sign in with your Google Account.</p>
+          </li>
+          <li>
+            <strong>Create Your API Key</strong>
+            <p>Click <em>"Create API Key"</em> and copy the generated key.</p>
+          </li>
+          <li>
+            <strong>Add to <code>.env</code> file</strong>
+            <p>In the project folder, open the <code>.env</code> file and update:</p>
+            <pre><code>GEMINI_API_KEY=AIzaSy...your_actual_key</code></pre>
+          </li>
+          <li>
+            <strong>Restart the Server</strong>
+            <p>Run <code>npm start</code> in the terminal. The status indicator will turn green once connected!</p>
+          </li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="dismissSetupModalBtn">Got it!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-meta">
+        <strong>LinguaAI</strong> &bull; CodeAlpha Artificial Intelligence Internship Submission
+      </p>
+      <p class="footer-sub">
+        Powered by Google Gemini Generative AI &bull; Express.js &bull; Web Speech Synthesis
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

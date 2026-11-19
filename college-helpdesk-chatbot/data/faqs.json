@@ -1,0 +1,486 @@
+[
+  {
+    "id": 1,
+    "category": "Admissions",
+    "question": "How can I apply for admission?",
+    "answer": "You can begin the admission process by checking the college admission office or official admissions portal. Keep your qualifying examination marks cards, identity proof, photographs, and any required entrance-exam documents ready. Confirm the current year's process directly with the college.",
+    "keywords": [
+      "apply",
+      "application",
+      "join",
+      "enroll",
+      "admission process"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Admissions",
+    "question": "What documents are required for admission?",
+    "answer": "Commonly requested documents include qualifying examination marks cards, transfer certificate, migration certificate when applicable, identity proof, photographs, and entrance-exam or counselling documents if required. The exact list depends on the admission category, so verify it with the admission office.",
+    "keywords": [
+      "documents",
+      "certificates",
+      "marks card",
+      "transfer certificate",
+      "admission"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Admissions",
+    "question": "Is direct admission available?",
+    "answer": "Admission routes and eligibility can change each academic year. Contact the admission office to confirm whether a direct-admission route is available and what eligibility conditions apply.",
+    "keywords": [
+      "direct",
+      "management quota",
+      "admission seat"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Admissions",
+    "question": "What courses are offered by the college?",
+    "answer": "This demo helpdesk does not contain a verified live course catalogue. Please consult the college's official website or academic office for the current list of undergraduate and postgraduate programmes.",
+    "keywords": [
+      "courses",
+      "programs",
+      "branches",
+      "degrees",
+      "departments"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Admissions",
+    "question": "What is the eligibility for engineering admission?",
+    "answer": "Engineering admission eligibility depends on the current regulations, qualifying examination subjects and marks, and the applicable entrance or counselling process. Confirm the latest criteria with the admission office or official admission authority.",
+    "keywords": [
+      "eligibility",
+      "engineering",
+      "12th",
+      "puc",
+      "cet",
+      "comedk"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Courses",
+    "question": "Can I change my branch or department?",
+    "answer": "Branch or department changes are subject to university rules, seat availability, academic performance, and institutional approval. Speak with the academic section to understand the current procedure.",
+    "keywords": [
+      "branch change",
+      "department change",
+      "transfer"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Courses",
+    "question": "Where can I find the academic calendar?",
+    "answer": "The academic calendar is normally shared through the college website, student portal, department notice boards, or class coordinators. Check the latest published calendar for semester dates and holidays.",
+    "keywords": [
+      "calendar",
+      "semester dates",
+      "holidays",
+      "schedule"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Courses",
+    "question": "Who should I contact for subject-related doubts?",
+    "answer": "For subject-related doubts, contact the faculty member handling that course or your department's class coordinator. You can also ask during the faculty's announced consultation hours.",
+    "keywords": [
+      "faculty",
+      "teacher",
+      "subject",
+      "doubt",
+      "class coordinator"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Fees",
+    "question": "How can I pay my college fees?",
+    "answer": "Use only the payment methods and official payment links communicated by the college accounts section. Keep the transaction receipt or acknowledgement for your records.",
+    "keywords": [
+      "pay",
+      "payment",
+      "online",
+      "fee payment",
+      "accounts"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Fees",
+    "question": "Where can I get the fee structure?",
+    "answer": "The latest fee structure can be obtained from the accounts office or official admission information for your programme and admission category. Fees may differ by course and year.",
+    "keywords": [
+      "fee amount",
+      "tuition",
+      "cost",
+      "fee details",
+      "structure"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Fees",
+    "question": "What should I do if my fee payment fails?",
+    "answer": "First check whether the amount was debited. Save the transaction reference and screenshot, avoid repeating the payment immediately if the status is unclear, and contact the accounts office or payment provider for reconciliation.",
+    "keywords": [
+      "failed transaction",
+      "payment issue",
+      "debited",
+      "refund",
+      "receipt"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Fees",
+    "question": "Can I get a fee receipt?",
+    "answer": "Yes, fee receipts or payment acknowledgements are generally issued after successful payment. If you cannot access yours, contact the accounts office with your student details and transaction reference.",
+    "keywords": [
+      "receipt",
+      "invoice",
+      "payment proof"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Fees",
+    "question": "Are scholarships available?",
+    "answer": "Scholarship availability depends on government schemes, eligibility, category, income criteria, and institutional support. Contact the scholarship section and check the relevant official scholarship portal for current deadlines and requirements.",
+    "keywords": [
+      "scholarship",
+      "financial aid",
+      "fee concession",
+      "government scheme"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "Examinations",
+    "question": "Where can I find the examination timetable?",
+    "answer": "Examination timetables are usually published by the examination section through official notices, the student portal, or department communication channels. Always refer to the latest revised timetable.",
+    "keywords": [
+      "exam time table",
+      "schedule",
+      "dates",
+      " ಪರೀಕ್ಷೆ"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Examinations",
+    "question": "How do I get my hall ticket?",
+    "answer": "Hall-ticket availability and download instructions are announced by the examination section. Check the student portal or contact your department if your hall ticket is missing or contains incorrect details.",
+    "keywords": [
+      "admit card",
+      "hall ticket",
+      "exam entry"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "Examinations",
+    "question": "What happens if I miss an examination?",
+    "answer": "Rules for absence, medical reasons, and supplementary or repeat examinations are governed by the university's examination regulations. Contact the examination section immediately and submit supporting documents if applicable.",
+    "keywords": [
+      "miss exam",
+      "absent",
+      "medical",
+      "retest",
+      "supplementary"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "Examinations",
+    "question": "When will examination results be announced?",
+    "answer": "Result dates are announced by the university or examination authority. Check the official results portal and college notices for confirmed updates.",
+    "keywords": [
+      "results",
+      "result date",
+      "marks",
+      "grades"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Examinations",
+    "question": "How can I apply for revaluation?",
+    "answer": "Revaluation or photocopy application procedures, fees, and deadlines are specified in the examination notification. Contact the examination section and apply within the announced window.",
+    "keywords": [
+      "revaluation",
+      "rechecking",
+      "answer script",
+      "photocopy"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "Examinations",
+    "question": "What is the internal assessment process?",
+    "answer": "Internal assessment generally includes components such as tests, assignments, quizzes, practical work, or other course activities. The exact pattern and weightage are defined by the applicable university and course regulations.",
+    "keywords": [
+      "IA",
+      "internal marks",
+      "tests",
+      "assignments",
+      "assessment"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "Attendance",
+    "question": "What is the minimum attendance requirement?",
+    "answer": "Attendance requirements are determined by the applicable university and college regulations and may vary by programme or academic year. Confirm the current minimum with your department or academic section.",
+    "keywords": [
+      "attendance percentage",
+      "minimum attendance",
+      "shortage"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "Attendance",
+    "question": "How can I check my attendance?",
+    "answer": "Attendance may be available through the student portal, department records, or class coordinator. Check regularly and report any discrepancy to the concerned faculty member promptly.",
+    "keywords": [
+      "attendance status",
+      "check attendance",
+      "absent count"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "Attendance",
+    "question": "What should I do if my attendance is incorrect?",
+    "answer": "Contact the faculty member or class coordinator for the relevant subject and provide any supporting details. Raise the issue as soon as possible so it can be checked against the attendance record.",
+    "keywords": [
+      "wrong attendance",
+      "attendance correction",
+      "present marked absent"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "Attendance",
+    "question": "Can I submit a medical certificate for absence?",
+    "answer": "If you were absent due to illness, contact your department and ask about the required procedure and acceptable supporting documents. Submission of a certificate does not automatically guarantee attendance consideration.",
+    "keywords": [
+      "sick leave",
+      "medical certificate",
+      "leave",
+      "illness"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "Library",
+    "question": "What are the library timings?",
+    "answer": "Library timings can vary during regular working days, examinations, and holidays. Please check the current notice displayed by the library or contact the librarian for today's timings.",
+    "keywords": [
+      "library hours",
+      "opening time",
+      "closing time",
+      "working hours"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "Library",
+    "question": "How can I borrow books from the library?",
+    "answer": "Use your valid student or library identity as required by the library. Search the catalogue, request an available copy, and follow the librarian's instructions for issue and return.",
+    "keywords": [
+      "borrow",
+      "issue book",
+      "book lending",
+      "library card"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "Library",
+    "question": "How many days can I keep a library book?",
+    "answer": "Loan periods and renewal limits depend on the library's current rules and the type of material. Check the due date printed or shown in your issue record, or ask the librarian.",
+    "keywords": [
+      "book return",
+      "due date",
+      "renewal",
+      "loan period"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "Library",
+    "question": "What happens if I return a book late?",
+    "answer": "Late returns may attract a fine or other restriction according to library policy. Contact the library desk to confirm the amount and clear any overdue item.",
+    "keywords": [
+      "late fee",
+      "fine",
+      "overdue",
+      "book return"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "Hostel",
+    "question": "How can I apply for hostel accommodation?",
+    "answer": "Contact the hostel office to check availability, eligibility, application forms, required documents, and the current fee. Hostel allotment is subject to the institution's rules and available rooms.",
+    "keywords": [
+      "hostel admission",
+      "room",
+      "accommodation",
+      "apply hostel"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "Hostel",
+    "question": "Are hostel facilities available for students?",
+    "answer": "Please contact the hostel office or consult the official college information to confirm current hostel availability, facilities, and eligibility for students.",
+    "keywords": [
+      "hostel facilities",
+      "residence",
+      "stay",
+      "dormitory"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "Hostel",
+    "question": "Whom should I contact for hostel complaints?",
+    "answer": "Report hostel-related issues to the hostel warden or hostel office. For urgent safety concerns, contact campus security or the appropriate emergency service immediately.",
+    "keywords": [
+      "warden",
+      "hostel problem",
+      "complaint",
+      "maintenance"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "Placements",
+    "question": "Does the college have a placement cell?",
+    "answer": "For current placement-cell details, activities, and contact information, consult the official placement office or your department placement coordinator.",
+    "keywords": [
+      "placement office",
+      "career cell",
+      "campus placement"
+    ]
+  },
+  {
+    "id": 32,
+    "category": "Placements",
+    "question": "How can I register for campus placements?",
+    "answer": "Follow announcements from the placement cell and register through the official process. Keep your updated resume, academic details, and required documents ready, and check eligibility criteria for each drive.",
+    "keywords": [
+      "placement registration",
+      "job drive",
+      "campus recruitment"
+    ]
+  },
+  {
+    "id": 33,
+    "category": "Placements",
+    "question": "How can I prepare for placement interviews?",
+    "answer": "Build core subject knowledge, practise data structures and problem solving, revise programming fundamentals, prepare projects you can explain clearly, and practise aptitude and communication skills. Follow the placement cell's preparation schedule too.",
+    "keywords": [
+      "interview preparation",
+      "aptitude",
+      "coding",
+      "resume",
+      "technical interview"
+    ]
+  },
+  {
+    "id": 34,
+    "category": "Placements",
+    "question": "Are internships available through the college?",
+    "answer": "Internship opportunities may be shared by the placement cell, departments, faculty, or official college channels. Check eligibility, deadlines, and whether the opportunity is verified before applying.",
+    "keywords": [
+      "internship",
+      "training",
+      "industry",
+      "internship opportunities"
+    ]
+  },
+  {
+    "id": 35,
+    "category": "Campus Facilities",
+    "question": "What are the college working hours?",
+    "answer": "Working hours can differ for academic departments, administrative offices, laboratories, and holidays. Check the latest college notice or contact the relevant office before visiting.",
+    "keywords": [
+      "college timing",
+      "office hours",
+      "opening",
+      "closing"
+    ]
+  },
+  {
+    "id": 36,
+    "category": "Campus Facilities",
+    "question": "Is Wi-Fi available on campus?",
+    "answer": "Campus Wi-Fi availability, access credentials, and usage rules are managed by the institution's IT support team. Contact them for connection instructions or troubleshooting.",
+    "keywords": [
+      "wifi",
+      "internet",
+      "network",
+      "connect"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "Campus Facilities",
+    "question": "Where can I report a technical issue?",
+    "answer": "For classroom, laboratory, network, or student-portal technical issues, contact the relevant lab in-charge, IT support team, or department office and include a clear description of the problem.",
+    "keywords": [
+      "technical support",
+      "computer issue",
+      "portal problem",
+      "IT help"
+    ]
+  },
+  {
+    "id": 38,
+    "category": "Campus Facilities",
+    "question": "Is there a canteen on campus?",
+    "answer": "For current canteen availability, menu, and operating hours, check the campus facility notices or ask the college administration.",
+    "keywords": [
+      "food",
+      "canteen",
+      "cafeteria",
+      "lunch"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "Campus Facilities",
+    "question": "Where can I find the college contact details?",
+    "answer": "Use the contact details published on the college's official website or in official college documents. Avoid relying on unverified phone numbers shared in unofficial groups.",
+    "keywords": [
+      "phone number",
+      "email",
+      "address",
+      "contact",
+      "helpdesk"
+    ]
+  },
+  {
+    "id": 40,
+    "category": "Campus Facilities",
+    "question": "How do I get a student ID card?",
+    "answer": "Contact the student section or administrative office for the ID-card application or replacement process. You may be asked to provide a photograph, admission details, and proof of identity.",
+    "keywords": [
+      "identity card",
+      "ID card",
+      "student card",
+      "replacement"
+    ]
+  }
+]

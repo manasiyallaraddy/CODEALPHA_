@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="College Helpdesk - an FAQ assistant for students.">
+  <title>College Helpdesk | AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="side-panel">
+      <div class="brand">
+        <div class="brand-mark">CH</div>
+        <div><strong>CampusCare</strong><span>STUDENT SUPPORT</span></div>
+      </div>
+      <div class="side-intro">
+        <span class="eyebrow">YOUR CAMPUS COMPANION</span>
+        <h1>How can we<br><em>help you?</em></h1>
+        <p>Quick answers to common questions, all in one place.</p>
+      </div>
+      <div class="side-links">
+        <div class="side-link active"><span>⌂</span> Helpdesk chat</div>
+        <div class="side-link"><span>▤</span> Frequently asked questions</div>
+        <div class="side-link"><span>◷</span> Student support</div>
+      </div>
+      <div class="side-note">
+        <div class="note-icon">✦</div>
+        <strong>Here for your campus journey.</strong>
+        <p>Ask naturally. Our assistant will find the closest answer in its FAQ library.</p>
+      </div>
+      <div class="side-footer">COLLEGE HELPDESK <span>•</span> DEMO PROJECT</div>
+    </aside>
+
+    <section class="chat-panel">
+      <header class="topbar">
+        <div class="assistant-identity">
+          <div class="avatar">✦</div>
+          <div><strong>College Helpdesk AI</strong><span><i class="online-dot"></i> Online · Ready to assist</span></div>
+        </div>
+        <button class="reset-button" id="clearChat" type="button" title="Start a new conversation">↻ <span>New chat</span></button>
+      </header>
+
+      <div class="conversation" id="conversation" aria-live="polite">
+        <div class="date-label">TODAY</div>
+        <div class="message-row bot-row">
+          <div class="message-avatar">✦</div>
+          <div class="message-content">
+            <div class="sender">COLLEGE HELPDESK AI <span>JUST NOW</span></div>
+            <div class="bubble bot-bubble">Hello! 👋 Welcome to the College Helpdesk. I'm here to make campus information easier to find. What would you like to know?</div>
+          </div>
+        </div>
+        <div class="suggestion-block" id="suggestionBlock">
+          <p>YOU CAN ASK ME ABOUT</p>
+          <div class="suggestion-chips">
+            <button class="suggestion-chip" type="button">How do I apply for admission?</button>
+            <button class="suggestion-chip" type="button">What is the minimum attendance?</button>
+            <button class="suggestion-chip" type="button">How can I register for placements?</button>
+            <button class="suggestion-chip" type="button">How do I pay my fees?</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-wrap">
+        <div class="composer" id="composer">
+          <input id="questionInput" type="text" maxlength="500" placeholder="Type your question here..." autocomplete="off" aria-label="Type your question">
+          <button id="sendButton" class="send-button" type="button" aria-label="Send message">➤</button>
+        </div>
+        <div class="composer-foot"><span>✦</span> Answers are generated from the college FAQ knowledge base.</div>
+      </div>
+    </section>
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>
